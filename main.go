@@ -43,3 +43,18 @@ func printMap(c map[string]string) { // Breakdown of syntax in notes' point 2
 //    }
 //    The c in the function's parameter is the argument's name, whereas the map[string]string is the type of the map
 //    color in the for loop is the key for this step through the loop, whereas the hex is the value for this step through the loop
+//
+// 3. Differences between Map and Struct
+//    Map:
+//    - All keys must be the same type
+//    - All values must be the same type
+//    - Keys are indexed - we can iterate over them
+//    - Use to represent a collection of related properties <- Use case
+//    - Don't need to know all the keys at compile time
+//    - Reference type!
+//    Struct:
+//    - Values can be of different type
+//    - Keys don't support indexing
+//    - You need to know all the different fields at compile time
+//    - Use to represent a "thing" with a lot of different properties <- Use case
+//    - Value type!
