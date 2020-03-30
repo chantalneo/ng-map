@@ -58,3 +58,38 @@ func printMap(c map[string]string) { // Breakdown of syntax in notes' point 2
 //    - You need to know all the different fields at compile time
 //    - Use to represent a "thing" with a lot of different properties <- Use case
 //    - Value type!
+
+// Quiz 9: Test Your Knowledge: Maps
+// 1. Can some of the keys in a single map be of type int and others of type string? No
+// 2. Can some of the values in a single map be of type int and others of type string? No
+// 3. Take a look at the following code. What would the print statement log out? map[dog: bark cat: purr]
+/* 	package main
+	import "fmt"
+
+	func main() {
+ 		m := map[string]string{
+   			"dog": "bark",
+ 		}
+
+		changeMap(m)
+
+ 		fmt.Println(m)
+	}
+
+	func changeMap(m map[string]string) {
+ 	m["cat"] = "purr"
+	} */
+// 4. What would happen if we tried to run the following program? The compiler would throw an error because the variable key was created, but never used
+/* 	package main
+	import "fmt"
+
+	func main() {
+		m := map[string]string{
+   			"dog": "bark",
+   			"cat": "purr",
+ 		}
+
+ 		for key, value := range m {
+   			fmt.Println(value)
+ 		}
+	} */
