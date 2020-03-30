@@ -3,10 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	colors := map[string]string{ // One of the ways to declare a map. First string between the square brackets indicates that the keys are of type string. And the next occurrence of string says all the values are string as well
-		"red":   "#ff0000",
-		"green": "#008000",
-	}
+	// colors := map[string]string{ // One of the ways to declare a map. First string between the square brackets indicates that the keys are of type string. And the next occurrence of string says all the values are string as well
+	// 	"red":   "#ff0000",
+	// 	"green": "#008000",
+	// }
+
+	// var colors map[string]string // Another way of declaring a map. Since we didn't assign an actual value, Go will initialize it with its zero value. I.e. an empty map - has no key value pairs inside of it
+
+	colors := make(map[string]string) // Yet another way of declaring a map, using Go's built-in function. This line here and the previous way of declaring a map are pretty much equivalent for all intents and purposes
+
+	colors["white"] = "#ffffff" // To add a key value pair
+
+	delete(colors, "white") // To delete a key value pair, use the built in function 'delete'
 
 	fmt.Println(colors)
 }
