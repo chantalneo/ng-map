@@ -3,20 +3,27 @@ package main
 import "fmt"
 
 func main() {
-	// colors := map[string]string{ // One of the ways to declare a map. First string between the square brackets indicates that the keys are of type string. And the next occurrence of string says all the values are string as well
-	// 	"red":   "#ff0000",
-	// 	"green": "#008000",
-	// }
+	colors := map[string]string{ // One of the ways to declare a map. First string between the square brackets indicates that the keys are of type string. And the next occurrence of string says all the values are string as well
+		"red":   "#ff0000",
+		"green": "#008000",
+		"white": "#ffffff",
+	}
 
 	// var colors map[string]string // Another way of declaring a map. Since we didn't assign an actual value, Go will initialize it with its zero value. I.e. an empty map - has no key value pairs inside of it
 
-	colors := make(map[string]string) // Yet another way of declaring a map, using Go's built-in function. This line here and the previous way of declaring a map are pretty much equivalent for all intents and purposes
+	// colors := make(map[string]string) // Yet another way of declaring a map, using Go's built-in function. This line here and the previous way of declaring a map are pretty much equivalent for all intents and purposes
 
-	colors["white"] = "#ffffff" // To add a key value pair
+	// colors["white"] = "#ffffff" // To add a key value pair
 
-	delete(colors, "white") // To delete a key value pair, use the built in function 'delete'
+	// delete(colors, "white") // To delete a key value pair, use the built in function 'delete'
 
-	fmt.Println(colors)
+	printMap(colors)
+}
+
+func printMap(c map[string]string) { // Breakdown of syntax in notes' point 2
+	for color, hex := range c {
+		fmt.Println("Hex code for", color, "is", hex)
+	}
 }
 
 // Notes:
@@ -28,3 +35,11 @@ func main() {
 //      Just the keys and the values themselves don't have to be of the same type just all the different values have to.
 //      I.e. key1, key2, key3 must be all of the same type
 //           and value1, value2, value3 must be all of the same type
+//
+// 2. func printMap(c map[string]string) { // Breakdown of syntax in notes' point 2
+//	     for color, hex := range c {
+//
+//	     }
+//    }
+//    The c in the function's parameter is the argument's name, whereas the map[string]string is the type of the map
+//    color in the for loop is the key for this step through the loop, whereas the hex is the value for this step through the loop
